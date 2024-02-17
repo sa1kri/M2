@@ -1,25 +1,20 @@
 import React, {useRef} from "react";
 import { Toaster  } from "sonner";
 
-export const RegForm = () => { 
-    const inputLogin = useRef(null);
-    const inputPassword = useRef(null);
-    const changeLogin = (e) => {
-        e.prevenDefault();
+const changeLogin = (e) => {
+    e.preventDefault();
 
-        const login = inputLogin.current.Value
-        const password = inputPassword.current.value
-        console.log(login, password)
+    const login = inputLogin.current.value;
+    const password = inputPassword.current.value;
 
-        axios.post('/api/login', {login, password}, {
-            withCredentials: false,
-        }).then(() => {
-            toast.success('Авторизация удалась')
-        })
+    axios.post('/api/login', { login, password }, {
+        withCredentials: false,
+    }).then(() => {
+        toast.success('Авторизация удалась');
+    })
         .catch(() => {
-            toast.error('Авторизация не удалась')
-        })
-    }
+            toast.error('Авторизация не удалась');
+        });
     
     return (
           <>
