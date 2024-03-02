@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Menu from "@/components/Menu/Menu";
+import CatFact from "./api/images/images";
 
 export const metadata ={
   title: 'Домашняя',
@@ -18,6 +19,7 @@ export default function Home() {
       <div className={styles.description}>
         <Menu/>
         товар
+        <CatFact/>
       </div>
     </main>
   );
